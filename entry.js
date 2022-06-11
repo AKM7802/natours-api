@@ -7,11 +7,24 @@ const helmet=require('helmet')//It specifies some security headers
 const mongoSanitize=require('express-mongo-sanitize') //NPM package to Sanitize data
 const xss=require('xss-clean')//NPM package to sanitize data
 
+const cors=require('cors') //cross origin resource origin - To allow another website to use this app 
 const tourRouter=require('./routes/tourRoutes')
 const userRouter=require('./routes/userRoutes')
 const reviewRouter=require('./routes/reviewRoutes')
 
 const app=express();
+
+//Implement CORS
+app.use(cors());  //This allows only simple requests like GET and POST
+// Access-Control-Allow-Origin *
+// api.natours.com, front-end natours.com
+// app.use(cors({
+// origin:"https://www.natours.com"
+// }))
+
+app.options('*',cors()) //For non simple requests like delete ,patch, use cookies etc
+//app.options('/api/v1/tours/:id',cors())
+
 //Security middlewares
 
 
