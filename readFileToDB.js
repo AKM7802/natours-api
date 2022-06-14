@@ -5,7 +5,7 @@ const Tour=require('./models/tourModel')
 const User=require('./models/userModel')
 const Review=require('./models/reviewModel')
 
-dotenv.config({path:'../config.env'})
+//dotenv.config({path:'../config.env'})
 const db=process.env.DATABASE.replace('<password>',process.env.DATABASE_PASS)
 
 mongoose.connect(db,{
