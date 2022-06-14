@@ -30,7 +30,8 @@ mongoose.connect(/*process.env.DATABASE_LOCAL*/ db ,{
 
 
 //npm install -g ndb To install debugger
-const server=app.listen(8800,()=>console.log("Server started at 8800"))
+const port=process.env.PORT || 8800
+const server=app.listen(port,()=>console.log("Server started"))
 
 
 //An extra safety measure to handle rejected promises
