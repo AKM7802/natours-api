@@ -3,7 +3,7 @@ const dotenv=require('dotenv')
 const mongoose=require('mongoose')
 
 //Connecting to config file
-dotenv.config({path:"../config.env"})
+//dotenv.config({path:"../config.env"})
 //console.log(process.env.DATABASE)
 //npm i mongoose@5
 
