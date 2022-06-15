@@ -4,7 +4,7 @@ const AppError=require('../utils/appError')
 const util=require('util')
 const sendEmail=require('../email')
 const crypto=require('crypto')
-const sendComplexEmail=require('../../Natours Server Rendering/complexEmail')
+//⚪const sendComplexEmail=require('../../Natours Server Rendering/complexEmail')
 
 //npm i jsonwebtoken - It is like passport to check authenticity without pass and userName everytime
 const jwt=require('jsonwebtoken')
@@ -59,7 +59,7 @@ exports.signup=catchAsync(async (req,res,next)=>{
     //For sending complex html email after signup
     //const url='http://localhost:8080/account'
     const url=`${req.protocol}://${req.get('host')}/account`
-    await new sendComplexEmail(newUser,url).sendWelcome()
+    //⚪await new sendComplexEmail(newUser,url).sendWelcome()
 
     //Creating a jwt token to send to the user who signed up
     // const token=jwt.sign({id:newUser._id},process.env.JWT_SECRET,{
