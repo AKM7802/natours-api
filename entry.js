@@ -52,13 +52,13 @@ app.use(mongoSanitize())
 //Data sanitization against XSS - Removes Html tags from req body
 app.use(xss())
 
-app.use('/',(req,res)=>{
-    res.end("Wellcome to some page.")
-})
+
 app.use('/api/v1/tours',tourRouter)
 app.use('/api/v1/users',userRouter)
 app.use('/api/v1/reviews',reviewRouter)
-
+app.use('/',(req,res)=>{
+    res.end("Wellcome to some page.")
+})
 
 
 //(ERROR HANDLING) FOR UNHANDLED ROUTES i.e for routes other than above the below error will show
