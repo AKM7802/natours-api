@@ -9,14 +9,14 @@ process.on('uncaughtException',err=>{
 })
 
 const app=require('./entry')
-const dotenv=require('dotenv')
+//const dotenv=require('dotenv')
 const mongoose=require('mongoose')
 
 
 
 
 //Connecting to config file
-dotenv.config({path:"../config.env"})
+//dotenv.config({path:"../config.env"})
 
 //Connecting to database
 const db=process.env.DATABASE.replace('<password>',process.env.DATABASE_PASS)
